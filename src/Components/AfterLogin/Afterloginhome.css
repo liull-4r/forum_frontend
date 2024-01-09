@@ -1,0 +1,85 @@
+.askbutton{
+    width: 250px;
+    background-color: #516CF0;
+    border-radius: 20px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 18px;
+}
+.askbutton:hover{
+    background-color:#FF8500;
+}
+.asksearch{
+    width: 250px;
+    border-radius: 1px solid black;
+    border-radius: 30px;
+    padding: 15px 15px 15px 30px; 
+}
+.askall{
+    display: flex;
+    align-items: center;
+    gap: 200px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    font-family: Lato,sans-serif;
+    font-weight: 400;
+}
+.question{
+
+   width: 80%;
+   margin: 0 auto;
+   margin-bottom: 30px;
+
+}
+.question h1{
+    margin-top: 80px;
+    font-family: Lato,sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    color: #212529;
+    line-height: 52px;
+    margin-bottom: 30px;
+
+}
+.afterlogin{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+    gap: 20px;
+    align-items: center;  
+
+}
+.afterlogin p{
+    font-family: Lato,sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #212529;
+    line-height: 28px;
+
+}
+.afterloginusername{
+    margin-left: 40px;
+    margin-top: -15px;
+}
+
+
+
+.customLink,
+.customLink:visited,
+.customLink:hover,
+.customLink:active {
+    text-decoration: none;
+    color: inherit;
+}
+ hr {
+    border: 1px solid #ccc; 
+    width: 80%; 
+  
+    margin: 10px auto;
+}
+
+
