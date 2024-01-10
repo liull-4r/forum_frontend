@@ -58,6 +58,7 @@ justify-content: flex-end;
     border: none;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
    
 }
 .loginbutton,.signupbutton,.resetbutton:hover{
