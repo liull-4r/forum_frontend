@@ -43,11 +43,7 @@ const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  // Filter questions based on search term
-  // eslint-disable-next-line no-unused-vars
-  // const filteredQuestions = question.questions?.filter(question => 
-  //   question.title.toLowerCase().includes(searchTerm.toLowerCase())
-  // );
+ 
   return (
       <div  style={{fontFamily:"Lato,sans-serif"}}>
         <div className="header">
