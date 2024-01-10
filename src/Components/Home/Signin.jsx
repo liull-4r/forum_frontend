@@ -41,7 +41,7 @@ function Signin({ switchView }) {
           <p className="donthave">Don’t have an account? 
              <Link onClick={() => switchView('signup')}>Create a new account</Link>
           </p>
-<p style={{color:"red",fontSize:"10px"}}>{success}</p>
+<p style={{color:"red",fontSize:"15px"}}>{success}</p>
           <form onSubmit={handleSubmit}>
         <input value={email}
           name="email"

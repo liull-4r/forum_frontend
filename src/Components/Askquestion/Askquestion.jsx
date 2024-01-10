@@ -3,18 +3,17 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import AfterloginHeader from "../AfterLogin/AfterloginHeader"
 import axios from "axios";
-
 import "./Askquestion.css"
 import Footer from "../Footer/Footer";
 import { useState } from "react";
 function Askquestion() {
-    const [title, setTitle] = useState('');
-    const [alert, setAlert] = useState("");
-    const Navigate=useNavigate()
-    const [description, setDescription] = useState('');
-      const stripHtml = (html) => {
-        const doc = new DOMParser().parseFromString(html, 'text/html');
-        return doc.body.textContent || "";
+const [title, setTitle] = useState('');
+const [alert, setAlert] = useState("");
+const Navigate=useNavigate()
+const [description, setDescription] = useState('');
+const stripHtml = (html) => {
+const doc = new DOMParser().parseFromString(html, 'text/html');
+return doc.body.textContent || "";
     }
  const plainTextDescription = stripHtml(description);
      const postQuestion = async () => {
@@ -24,10 +23,8 @@ function Askquestion() {
             setAlert("You're not logged in!");
             return;
         }
-
         try {
-            // eslint-disable-next-line no-unused-vars
-            const response = await axios.post('https://forum-backend-xlvk.onrender.com/api/question/onequestion', {
+const response = await axios.post('https://forum-backend-xlvk.onrender.com/api/question/onequestion', {
                 title,
                 description:plainTextDescription
             }, {
@@ -41,8 +38,7 @@ setTimeout(() => {
       Navigate("/afterlogin")
 }, 1000);
 setAlert("Question successfully posted!")
-   
-        } catch (error) {
+} catch (error) {
             // console.error('Error posting the question:', error);
              console.error('Error posting the question:', error.response ? error.response.data : error);
             setAlert("There was an error posting your question.");

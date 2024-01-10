@@ -5,10 +5,10 @@ import {   Link, useNavigate } from 'react-router-dom';
 import './Afterloginhome.css'
 import { FaGreaterThan } from "react-icons/fa";
 function Afterloginhome() {
-
   const Navigate = useNavigate();
   
   const [question, setQuestions] = useState([])
+  const [searchTerm, setSearchTerm] = useState("");
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {    
@@ -32,12 +32,22 @@ function Afterloginhome() {
  
   const username = localStorage.getItem('username'); 
 
-  const handleLogout = () => {
-    
+  const handleLogout = () => {   
     localStorage.removeItem('token'); 
      localStorage.removeItem('username'); 
         Navigate('/');
     };
+
+
+const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  // Filter questions based on search term
+  // eslint-disable-next-line no-unused-vars
+  // const filteredQuestions = question.questions?.filter(question => 
+  //   question.title.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
   return (
       <div  style={{fontFamily:"Lato,sans-serif"}}>
         <div className="header">
@@ -57,7 +67,13 @@ function Afterloginhome() {
       <div className="askall">
       
               <Link to="/ask-question"><button className="askbutton">Ask Questions</button></Link>
-              <input className="asksearch" type="text" placeholder="Search Questions" />
+            <input
+          className="asksearch"
+          type="text"
+          placeholder="Search Questions"
+          value={searchTerm}
+          onChange={handleSearchChange} // Set up onChange handler
+        />
               <span>Welcome {username}</span>
           </div>
 
@@ -69,7 +85,9 @@ function Afterloginhome() {
     
 
         {
-question.questions?.map((question, i) => {
+question.questions?.filter(question => 
+            question.title.toLowerCase().includes(searchTerm.toLowerCase())
+          ).map((question, i) => {
           let uniqueID = question.questionid;
             return (  
             
@@ -77,7 +95,7 @@ question.questions?.map((question, i) => {
 
                <div key={i} className="afterlogin">
                   <div className='usernamequestion'>
-                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUzmQxwKnYnWrAuIfaKoy_ojWhGy0-KZlH7fOkAU5WMH2D2OGafm6wsSSR0LJW--Es064&usqp=CAU" alt="" />
+                     <img style={{width:"150px",height:"150px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUzmQxwKnYnWrAuIfaKoy_ojWhGy0-KZlH7fOkAU5WMH2D2OGafm6wsSSR0LJW--Es064&usqp=CAU" alt="" />
                     <p  className='afterloginusername'>{question.username}</p>
                    
                   
