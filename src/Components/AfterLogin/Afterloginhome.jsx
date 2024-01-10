@@ -80,8 +80,7 @@ const handleSearchChange = (e) => {
          <hr />
     
 
-        {
-question.questions?.filter(question => 
+        { question.questions?.filter(question => 
             question.title.toLowerCase().includes(searchTerm.toLowerCase())
           ).map((question, i) => {
           let uniqueID = question.questionid;
@@ -107,7 +106,6 @@ question.questions?.filter(question =>
 )})
 }
 
- 
     </div>
   )
 }

@@ -17,12 +17,14 @@ function Signup({ switchView }) {
         'Content-Type': 'application/json',
       },
     });
+
+    setSuccess(response.data.message);
   
 if (response.status === 200 || response.status === 201) {
-      setSuccess("User registered successfully");
+      // setSuccess("User registered successfully");
       setTimeout(() => {
         switchView('signin');
-      }, 2000);
+      }, 1000);
     } 
   } catch (error) {
     if (error.response) {
@@ -48,6 +50,8 @@ if (response.status === 200 || response.status === 201) {
         <Link style={{cursor:"pointer"}} onClick={() => switchView('signin')} className="signin">
           Sign in
         </Link>                                                                                                       </p>
+      
+      <p className="success">{success}</p>
           <form onSubmit={handleSubmit}>
               <input  type="email" placeholder="Email adress" name="email"  />
                <div className="firstlast">
@@ -75,7 +79,7 @@ if (response.status === 200 || response.status === 201) {
               <button className="signupbutton" type="submit">Agree and Join</button>
           </form>
       <p className="already"> <Link onClick={() => switchView('signin')}>Already have an account?</Link></p>
-      {success && <p className="success">{success}</p>}
+      
     </div>
   )
 }
